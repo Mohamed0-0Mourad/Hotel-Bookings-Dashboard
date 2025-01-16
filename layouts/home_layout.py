@@ -49,7 +49,7 @@ def get_main_content():
                 ],className = "col"),
             html.Div([
                 html.H5("Average Lead Time", className = "text-center fw-bold"),
-                html.H5("-", className="text-center fw-bold"),
+                html.H6("(according to type)", className="text-center fw-bold"),
                 html.Hr(className="tm-10",style={"width": "350px", "border-top": "5px solid #FEA98A", "margin": "10px auto"}),
                 html.Div([
                     html.Div([
