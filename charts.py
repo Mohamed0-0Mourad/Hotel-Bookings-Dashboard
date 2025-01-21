@@ -63,7 +63,8 @@ def cancel_table():
     rep_perc = 100 * rep[1,1] / tot
     childs = drpd_canc.groupby("is_canceled")['children'].value_counts()
     child_perc = 100-(100*childs[1,float(0)]/tot)
-    return tot, rep_perc, child_perc
+    ftot = format(tot, ',')
+    return ftot, rep_perc, child_perc
 
 def marketVsCanc_bar(year):
     mar = canc[canc['arrival_date_year'] == year]

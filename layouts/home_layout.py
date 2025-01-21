@@ -15,14 +15,20 @@ def get_sidebar():
         html.Br(),
         html.H2("Hotel Booking Analysis", className="text-left fw-bold fs-1"),
         html.Br(),
-        html.H3("Arrival Year", className="fs-4"),
-        year,
-        html.Br(),html.Br(),html.Br(),html.Br(), html.Br(),
-        html.H3("Room Handling", className="fs-4"),
-        room_handle,
-        html.Br(),html.Br(),html.Br(),html.Br(),html.Br(),
-        html.H3("Meal Prefrence Dropdown", className="fs-4 md-20"),
-        meal
+        html.Div([
+            html.Div([
+                html.H3("Arrival Year", className="fs-4"),
+                year
+            ], className="ccard"),# html.Br(),html.Br(),html.Br(),html.Br(), html.Br(),
+            html.Div([
+                html.H3("Room Handling", className="fs-4"),
+                room_handle
+            ], className="ccard"),
+            html.Div([
+                html.H3("Meal Prefrence Dropdown", className="fs-4"),
+                meal
+            ], className="ccard")
+        ], className="con_container")
         ], className="col-md-2 text-white", style={"background-color": "#AAB99A"}
     )
     return sidebar
@@ -35,34 +41,34 @@ def get_main_content():
             html.Div([
                 html.H5("Total Cancels", className="text-center fw-bold"),
                 html.H5(str(tot),className="text-center fw-bold" ),
-                html.Hr(style= {"width": "350px", "border-top": "5px solid #AAB99A", "margin": "10px auto"}),
+                html.Hr(style= {"width": "400px", "border-top": "8px solid #F0F0D7", "margin": "5px auto"}),
                 html.Div([
                     html.Div([
-                        html.H6("Repeated Guests", className="text-center fw-bold"),
+                        html.H6("Repeated Guests", className="text-center fw-bold text-nowrap"),
                         html.H6(f"{rep_perc:.2f} %",className="text-center")
                         ], className = "col"),
                     html.Div([
                         html.H6("With Children", className="text-center fw-bold"),
                         html.H6(f"{child_perc:.2f} %", className="text-center")
                     ], className= "col")        
-                ], className = "row", style={"background-color": "#F0F0D7"})
-                ],className = "col"),
+                ], className = "row")
+                ],className = "card"),
             html.Div([
                 html.H5("Average Lead Time", className = "text-center fw-bold"),
-                html.H6("(according to type)", className="text-center fw-bold"),
-                html.Hr(className="tm-10",style={"width": "350px", "border-top": "5px solid #AAB99A", "margin": "10px auto"}),
+                html.H6("(according to hotel type)", className="text-center fw-bold"),
+                html.Hr(className="tm-10",style={"width": "400px", "border-top": "8px solid #F0F0D7", "margin": "5px auto"}),
                 html.Div([
                     html.Div([
                         html.H6("City Hotel", className="text-center fw-bold"),
-                        html.H6((f"%0.2f" % hotel_t),className="text-center")
-                        ], className = "col"),
+                        html.H6((f"%0.2f" % hotel_t),className="text-center fw-bold")
+                    ], className = "col-md-6"),
                     html.Div([
-                        html.H6("Resort Hotel", className="text-center fw-bold"),
-                        html.H6(f"%0.2f"%resort_t,className="text-center")
-                    ], className= "col")        
-                ], className = "row", style={"background-color": "#F0F0D7"})
-            ], className= "col")        
-        ], className = "row"),
+                        html.H6("Resort Hotel", className="text-center fw-bold text-nowrap"),
+                        html.H6(f"%0.2f"%resort_t,className="text-center fw-bold")
+                    ], className= "col-md-6")        
+                ], className = "row")
+            ], className= "card")
+        ], className = "container pt-0"),
         
         html.Div([
             dcc.Graph(id="line",className="col-md-6"),
