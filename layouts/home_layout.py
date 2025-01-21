@@ -27,8 +27,22 @@ def get_sidebar():
             html.Div([
                 html.H3("Meal Prefrence Dropdown", className="fs-4"),
                 meal
-            ], className="ccard")
-        ], className="con_container")
+            ], className="ccard"),
+            html.Div([
+                html.A(html.I(className="fab fa-linkedin fa-2x col"), 
+                       href="https://www.linkedin.com/in/mohamed0-0mourad", target="_blank", style={"color": "black","margin": "10px"}),
+
+                html.A(html.I(className="fab fa-github fa-2x col"), 
+                       href="https://github.com/Mohamed0-0Mourad", target="_blank", style={"color": "black","margin": "10px"}),
+
+                html.A(html.I(className="fa-solid fa-file-lines fa-2x col"),
+                       href = "https://docs.google.com/document/d/1L6khfjd5TUnscFEZsSvEBKMFTRbywzIFDCRi_4_OnHI/edit?usp=sharing", 
+                       target="_blank", style={"color": "black", "margin": "10px"})
+            ])
+        ], className="con_container"),
+        # html.Div([
+        # ], className="")
+
         ], className="col-md-2 text-white", style={"background-color": "#AAB99A"}
     )
     return sidebar
