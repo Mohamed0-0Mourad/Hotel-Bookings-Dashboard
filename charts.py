@@ -22,8 +22,8 @@ def trend_line(year:int):
     color_discrete_sequence= ['#FEA98A'])
     trend.update_xaxes(dtick = 1)
     trend.update_layout(dict(
-        paper_bgcolor="#FFE478", title = "Cancels Trend", xaxis_title = "Arrival Month", yaxis_title="Cancels"
-        ,plot_bgcolor= "#FFE478"
+        paper_bgcolor="#F0F0D7", title = "Cancels Trend", xaxis_title = "Arrival Month", yaxis_title="Cancels"
+        ,plot_bgcolor= "#F0F0D7"
     ))
     trend.update_traces(line=dict(width=4))
     # print(canceled) 
@@ -51,7 +51,7 @@ def spVsCanc_scatter():
     sc.update_layout({
         "title": "Total canceled customers and thier number of special requests",
         "xaxis_title": "No. Special Requests",
-        "yaxis_title": "Canceled Customers", "paper_bgcolor":"#FFE478","plot_bgcolor": "#FFE478"
+        "yaxis_title": "Canceled Customers", "paper_bgcolor":"#F0F0D7","plot_bgcolor": "#F0F0D7"
     })
     sc.update_traces(marker=dict(symbol="x", size=15, color="#FEA98A"),line=dict(width=4)) 
     return sc
@@ -76,7 +76,7 @@ def marketVsCanc_bar(year):
     g.update_layout(dict(
         title = "Market Segments Contribution to Cancelations",
         xaxis_title = "Cancelations", 
-        yaxis_title= "Market Segments", paper_bgcolor="#FFE478",plot_bgcolor= "#FFE478"
+        yaxis_title= "Market Segments", paper_bgcolor="#F0F0D7",plot_bgcolor= "#F0F0D7"
     ))
     return g 
 
@@ -90,7 +90,7 @@ def room_bar(assigned_reserved:str, year:int):
     g.update_layout(dict(
         title = f"Most frequently {assigned_reserved} room types",
         xaxis_title = f"{assigned_reserved.capitalize()} Count",
-        yaxis_title = "Room Type", paper_bgcolor="#FFE478",plot_bgcolor= "#FFE478"
+        yaxis_title = "Room Type", paper_bgcolor="#F0F0D7",plot_bgcolor= "#F0F0D7"
     ))
     return g
 
@@ -100,14 +100,14 @@ def country_pie(meal:str, year):
     m = m.groupby(["arrival_date_year"])['country'].value_counts().sort_values(ascending=0)
     m = m[year].reset_index()
 
-    g = px.pie(m.iloc[:10], "country", "count", hover_name="count"
+    g = px.pie(m.iloc[:5], "country", "count", hover_name="count"
                ,labels = "country"#,color_discrete_sequence=['green']*10
                , hole= 0.3,color_discrete_sequence=px.colors.qualitative.Pastel1)
     g.update_traces(
         textinfo='label+percent',
-        textfont_size=14, textfont_weight='bold',rotation = -270
+        textfont_size=14, textfont_weight='bold'#,rotation = -180
     )
-    g.update_layout(dict(title = "Meal prefrence across diffrent nationalities", paper_bgcolor="#FFE478",plot_bgcolor= "#FFE478"))
+    g.update_layout(dict(title = "Meal prefrence across diffrent nationalities", paper_bgcolor="#F0F0D7",plot_bgcolor= "#F0F0D7"))
     # g.show()
     return g
 
@@ -124,8 +124,8 @@ def park_hist(year:int):
     hist.for_each_annotation(lambda a: a.update(text=a.text.split('=')[-1]))
     hist.update_layout(dict(
         title = "Requiered parking lots distribution per cutomer type",
-        xaxis_title="Parking lots per customer", yaxis_title="Count of customers", paper_bgcolor="#FFE478"
-        ,plot_bgcolor= "#FFE478"    
+        xaxis_title="Parking lots per customer", yaxis_title="Count of customers", paper_bgcolor="#F0F0D7"
+        ,plot_bgcolor= "#F0F0D7"    
     ))
     # hist.show()
     return hist
