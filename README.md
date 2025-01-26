@@ -4,10 +4,10 @@ Developed an interactive stylized dashboard to analyze and visualize a hotel boo
 ## 🛠 Tools & Technologies:
 Python, Pandas, Plotly, Dash, Flask, HTML, CSS.
 ## ✨ Key Insights Uncovered:
-*Identified seasonal cancels impacting business performance.
-*Detected factors contributing to high cancellation rates.
-*Explored some demographics of the customers and canceled customers.
-*Discovered correlation between hotel services and cancel rates.
+* Identified seasonal cancels impacting business performance.
+* Detected factors contributing to high cancellation rates.
+* Explored some demographics of the customers and canceled customers.
+* Discovered correlation between hotel services and cancel rates.
 
 ## Hosted Website Overview:
 https://mohamedmourad.pythonanywhere.com/ 
