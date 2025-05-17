@@ -1,9 +1,9 @@
 # Hotel Booking Analysis - EDA dashboard
 Developed an interactive stylized dashboard to analyze and visualize a hotel bookings dataset. The dashboard uncovers trends, correlations, and insights. It aids in making informed decisions and enhances performance.
 
-## 🛠 Tools & Technologies:
+## Tools & Technologies:
 Python, Pandas, Plotly, Dash, Flask, HTML, CSS.
-## ✨ Key Insights Uncovered:
+## Key Insights Uncovered:
 * Identified seasonal cancels impacting business performance.
 * Detected factors contributing to high cancellation rates.
 * Explored some demographics of the customers and canceled customers.
